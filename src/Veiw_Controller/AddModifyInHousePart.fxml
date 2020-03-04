@@ -15,13 +15,13 @@
       <Label layoutX="36.0" layoutY="184.0" text="Price/Cost" />
       <Label layoutX="36.0" layoutY="239.0" text="Min" />
       <Label layoutX="177.0" layoutY="239.0" text="Max" />
-      <Label layoutX="36.0" layoutY="289.0" text="Company Name" />
+      <Label layoutX="36.0" layoutY="289.0" text="Machine ID" />
       <TextField fx:id="partIdTextField" disable="true" layoutX="93.0" layoutY="37.0" text="Auto-Generated Disabled" />
       <TextField layoutX="93.0" layoutY="80.0" promptText="Part Name" />
       <TextField layoutX="93.0" layoutY="125.0" promptText="Inv" />
       <TextField layoutX="93.0" layoutY="180.0" promptText="Price/Cost" />
       <TextField layoutX="71.0" layoutY="235.0" prefHeight="25.0" prefWidth="77.0" promptText="Min" />
       <TextField layoutX="219.0" layoutY="235.0" prefHeight="25.0" prefWidth="77.0" promptText="Max" />
-      <TextField layoutX="131.0" layoutY="285.0" promptText="Company Name" />
+      <TextField layoutX="131.0" layoutY="285.0" promptText="Mach ID" />
    </children>
 </AnchorPane>
