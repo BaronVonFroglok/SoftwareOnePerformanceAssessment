@@ -1,6 +1,13 @@
 package Model;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Inventory {
 
@@ -20,11 +27,25 @@ public class Inventory {
     }
 
     public Product lookupProduct(int productId){
-
+       Product pr = new Product();
+             allProducts.forEach( p -> {
+                if(p.getId() == productId){
+                     pr.setId(p.getId());
+                     pr.
+                }
+            });
+             return pr;
     }
 
     public ObservableList<Part> lookupPart(String name){
+        ObservableList<Part> returnList = FXCollections.observableArrayList();
+        allParts.forEach( part -> {
+            if(part.getName().contains(name)){
+                returnList.add(part);
+            }
+        });
 
+        return returnList;
     }
 
     public ObservableList<Product> lookupProduct(String name){
