@@ -11,34 +11,47 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class Inventory {
 
-    private ObservableList<Part> allParts;
-    private ObservableList<Product> allProducts;
+    private ArrayList<Part> allParts;
+    private ArrayList<Product> allProducts;
+
+    public Inventory() {
+        allParts = new ArrayList<>();
+        allProducts = new ArrayList<>();
+    }
 
     public void addPart(Part newPart){
-
+        if (newPart != null){
+            allParts.add(newPart);
+        }
     }
 
     public void addProduct(Product newProduct){
-
+        if (newProduct != null){
+            allProducts.add(newProduct);
+        }
     }
 
     public Part lookupPart(int partId){
 
+        for (int x = 0; x >= allParts.size();x++) {
+            if (allParts.get(x).getId() == partId) {
+                return allParts.get(x);
+            }
+        }
+        return null;
     }
 
     public Product lookupProduct(int productId){
-       Product pr = new Product();
-             allProducts.forEach( p -> {
-                if(p.getId() == productId){
-                     pr.setId(p.getId());
-                     pr.
-                }
-            });
-             return pr;
+      for(int x = 0; x>= allProducts.size();x++){
+          if (allProducts.get(x).getId()==productId){
+              return allProducts.get(x);
+          }
+      }
+      return null;
     }
 
-    public ObservableList<Part> lookupPart(String name){
-        ObservableList<Part> returnList = FXCollections.observableArrayList();
+    public ArrayList<Part> lookupPart(String name){
+        ArrayList<Part> returnList = new ArrayList<>();
         allParts.forEach( part -> {
             if(part.getName().contains(name)){
                 returnList.add(part);
@@ -48,29 +61,51 @@ public class Inventory {
         return returnList;
     }
 
-    public ObservableList<Product> lookupProduct(String name){
-
+    public ArrayList<Product> lookupProduct(String name){
+        ArrayList<Product> returnList = new ArrayList<>();
+        allProducts.forEach( product -> {
+            if (product.getName().contains(name)){
+                returnList.add(product);
+            }
+        });
+        return returnList;
     }
 
     public void updatePart(int index, Part selectedPart){
-
+        for (int x = 0; x >= allParts.size(); x++){
+            if (allParts.get(x).getId() == index){
+                allParts.set(x,selectedPart);
+            }
+        }
     }
 
     public void updateProduct(int index, Product selectedProduct){
-
+        for (int x = 0; x >= allProducts.size(); x++){
+            if(allProducts.get(x).getId() == index){
+                allProducts.set(x,selectedProduct);
+            }
+        }
     }
 
     public void deletePart(Part selectedPart){
-
+        for (int x = 0; x >= allParts.size(); x++){
+            if (allParts.get(x).getId() == selectedPart.getId()){
+                allParts.remove(selectedPart);
+            }
+        }
     }
     public void deleteProduct(Product selectedProduct){
-
+        for (int x = 0; x >= allProducts.size(); x++){
+            if(allProducts.get(x).getId() == selectedProduct.getId()){
+                allProducts.remove(selectedProduct);
+            }
+        }
     }
-    public ObservableList<Part> getAllParts(){
+    public ArrayList<Part> getAllParts(){
         return allParts;
     }
 
-    public ObservableList<Product> getAllProducts() {
+    public ArrayList<Product> getAllProducts() {
         return allProducts;
     }
 }

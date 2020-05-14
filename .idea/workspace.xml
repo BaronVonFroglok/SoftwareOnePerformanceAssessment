@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Inventory finished, fxml fxid fixes, TODO insert all fxids start controller dev">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyInHousePart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyInHousePart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyInHousePartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyInHousePartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyOutsourcedPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyOutsourcedPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyOutsourcedPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyOutsourcedPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyPartMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyPartMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyProduct.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/AddModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Veiw_Controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/MainScreenController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,13 +66,25 @@
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1YN4CLFLY9E770fGDlSeuFBb64D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -76,8 +103,13 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/SceneBuilder/SceneBuilder.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Veiw_Controller" />
     <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Josh\IdeaProjects\JoshZierGYP1\src\Veiw_Controller" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -179,16 +211,26 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Inventory finished, fxml fxid fixes, TODO insert all fxids start controller dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inventory finished, fxml fxid fixes, TODO insert all fxids start controller dev" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1589392176800">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589392176800" />
+    <state x="664" y="140" key="CommitChangelistDialog2" timestamp="1589479022016">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="664" y="140" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1589479022016" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1582998999094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1582998999094" />
-    <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1582998951450">
+    <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1589477207661">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="661" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1582998951450" />
+    <state x="661" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589477207661" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

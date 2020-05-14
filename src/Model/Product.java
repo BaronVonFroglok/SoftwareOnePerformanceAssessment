@@ -1,9 +1,9 @@
 package Model;
 
-import javafx.collections.ObservableList;
+import java.util.ArrayList;
 
 public class Product {
-    private ObservableList<Part> associatedParts;
+    private ArrayList<Part> associatedParts;
     private int id;
     private String name;
     private double price;
@@ -70,14 +70,22 @@ public class Product {
     }
 
     public void addAssociatedPart(Part part){
-
+        if(part != null){
+            associatedParts.add(part);
+        }
     }
 
     public boolean deleteAssociatedPart(Part selectedPart){
-
+        for(int x = 0; x >= this.associatedParts.size(); x++){
+            if(associatedParts.get(x).getId() == selectedPart.getId()){
+                associatedParts.remove(selectedPart);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public ObservableList<Part> getAllAssociatedParts(){
+    public ArrayList<Part> getAllAssociatedParts(){
         return associatedParts;
     }
 }
