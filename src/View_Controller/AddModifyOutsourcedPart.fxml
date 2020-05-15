@@ -17,11 +17,11 @@
       <Label layoutX="177.0" layoutY="239.0" text="Max" />
       <Label layoutX="36.0" layoutY="289.0" text="Company Name" />
       <TextField fx:id="partIdTextField" disable="true" layoutX="93.0" layoutY="37.0" text="Auto-Generated Disabled" />
-      <TextField layoutX="93.0" layoutY="80.0" promptText="Part Name" />
-      <TextField layoutX="93.0" layoutY="125.0" promptText="Inv" />
-      <TextField layoutX="93.0" layoutY="180.0" promptText="Price/Cost" />
-      <TextField layoutX="71.0" layoutY="235.0" prefHeight="25.0" prefWidth="77.0" promptText="Min" />
-      <TextField layoutX="219.0" layoutY="235.0" prefHeight="25.0" prefWidth="77.0" promptText="Max" />
-      <TextField layoutX="131.0" layoutY="285.0" promptText="Company Name" />
+      <TextField fx:id="partNameTextField" layoutX="93.0" layoutY="80.0" promptText="Part Name" />
+      <TextField fx:id="partStockTextField" layoutX="93.0" layoutY="125.0" promptText="Inv" />
+      <TextField fx:id="partCostTextField" layoutX="93.0" layoutY="180.0" promptText="Price/Cost" />
+      <TextField fx:id="partMinTextField" layoutX="71.0" layoutY="235.0" prefHeight="25.0" prefWidth="77.0" promptText="Min" />
+      <TextField fx:id="partMaxTextField" layoutX="219.0" layoutY="235.0" prefHeight="25.0" prefWidth="77.0" promptText="Max" />
+      <TextField fx:id="partCompanyTextField" layoutX="131.0" layoutY="285.0" promptText="Company Name" />
    </children>
 </AnchorPane>
