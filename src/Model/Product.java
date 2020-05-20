@@ -3,7 +3,7 @@ package Model;
 import java.util.ArrayList;
 
 public class Product {
-    private ArrayList<Part> associatedParts;
+    private ArrayList<Part> associatedParts = new ArrayList<Part>();
     private int id;
     private String name;
     private double price;
@@ -70,9 +70,7 @@ public class Product {
     }
 
     public void addAssociatedPart(Part part){
-        if(part != null){
-            associatedParts.add(part);
-        }
+        associatedParts.add(part);
     }
 
     public boolean deleteAssociatedPart(Part selectedPart){
