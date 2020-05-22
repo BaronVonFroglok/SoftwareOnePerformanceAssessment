@@ -10,6 +10,9 @@ public class Outsourced extends Part{
         this.companyName = companyName;
     }
 
+    public Outsourced() {
+    }
+
     public String getCompanyName() {
         return companyName;
     }

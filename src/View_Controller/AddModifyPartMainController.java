@@ -2,11 +2,13 @@ package View_Controller;
 
 import Model.InHouse;
 import Model.Inventory;
+import Model.Outsourced;
 import Model.Part;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -41,6 +43,8 @@ public class AddModifyPartMainController implements Initializable {
         if (addOrMod.equalsIgnoreCase("add")){
             try{
                 inHousePane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyInHousePart.fxml"));
+                InHouse newPart = new InHouse();
+                AddModifyInHousePartController controller = new AddModifyInHousePartController(newPart,"add", inventory);
                 switchAnchorPane.getChildren().add(inHousePane);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -49,6 +53,30 @@ public class AddModifyPartMainController implements Initializable {
         }
         else if (addOrMod.equalsIgnoreCase("mod")){
 
+        }
+    }
+    public void inHouseRadioButtonClicked(MouseEvent mouseEvent){
+        switchAnchorPane.getChildren().clear();
+        outsourcedRadioButton.setSelected(false);
+        try{
+            inHousePane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyInHousePart.fxml"));
+            InHouse newPart = new InHouse();
+            AddModifyInHousePartController controller = new AddModifyInHousePartController(newPart,"add", inventory);
+            switchAnchorPane.getChildren().add(inHousePane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void outSourcedRadioButtonClicked(MouseEvent mouseEvent){
+        switchAnchorPane.getChildren().clear();
+        inHouseRadioButton.setSelected(false);
+        try{
+            outsourcedPane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyOutsourcedPart.fxml"));
+            Outsourced newPart = new Outsourced();
+            AddModifyOutsourcedPartController controller = new AddModifyOutsourcedPartController(newPart,"add", inventory);
+            switchAnchorPane.getChildren().add(outsourcedPane);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
