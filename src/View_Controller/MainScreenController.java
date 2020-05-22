@@ -41,6 +41,23 @@ public class MainScreenController implements Initializable {
     public void AddProductClicked(MouseEvent mouseEvent) {
     }
 
+    public void ModifyPartClicked(MouseEvent mouseEvent){
+        if(partsTableView.getSelectionModel().getSelectedItem()!= null) {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyPartMain.fxml"));
+            AddModifyPartMainController partMainController = new AddModifyPartMainController(inventory, "mod",(Part)partsTableView.getSelectionModel().getSelectedItem());
+            try {
+                fxLoader.setController(partMainController);
+                Parent root = fxLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void AddPartClicked(MouseEvent mouseEvent) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyPartMain.fxml"));

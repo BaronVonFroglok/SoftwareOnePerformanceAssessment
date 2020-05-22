@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="MainScreen loaded, no data shown, but data is there TODO finish controllers loading all pages correctly">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="add part button and page load successful. TODO add part finish and modify part implimentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/InHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Outsourced.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyOutsourcedPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyOutsourcedPart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyOutsourcedPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyOutsourcedPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMain.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View_Controller/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/MainScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View_Controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/MainScreenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589998722127</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add part button and page load successful. TODO add part finish and modify part implimentation">
+      <created>1590176939149</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590176939149</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -243,45 +246,46 @@
     <MESSAGE value="Inventory finished, fxml fxid fixes, TODO insert all fxids start controller dev" />
     <MESSAGE value="fx:ids finished TODO controllers and main" />
     <MESSAGE value="MainScreen loaded, no data shown, but data is there TODO finish controllers loading all pages correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="MainScreen loaded, no data shown, but data is there TODO finish controllers loading all pages correctly" />
+    <MESSAGE value="add part button and page load successful. TODO add part finish and modify part implimentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add part button and page load successful. TODO add part finish and modify part implimentation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1590170597135">
+    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1590177148873">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1590170597135" />
+    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1590177148873" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589761292896">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589761292896" />
-    <state x="664" y="140" key="CommitChangelistDialog2" timestamp="1589998720520">
+    <state x="664" y="140" key="CommitChangelistDialog2" timestamp="1590177017471">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="664" y="140" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1589998720520" />
+    <state x="664" y="140" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590177017471" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1582998999094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1582998999094" />
-    <state width="1605" height="266" key="GridCell.Tab.0.bottom" timestamp="1590170956470">
+    <state width="1605" height="266" key="GridCell.Tab.0.bottom" timestamp="1590178083594">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590170956470" />
-    <state width="1605" height="266" key="GridCell.Tab.0.center" timestamp="1590170956470">
+    <state width="1605" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
+    <state width="1605" height="266" key="GridCell.Tab.0.center" timestamp="1590178083594">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590170956470" />
-    <state width="1605" height="266" key="GridCell.Tab.0.left" timestamp="1590170956470">
+    <state width="1605" height="266" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
+    <state width="1605" height="266" key="GridCell.Tab.0.left" timestamp="1590178083594">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590170956470" />
-    <state width="1605" height="266" key="GridCell.Tab.0.right" timestamp="1590170956470">
+    <state width="1605" height="266" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
+    <state width="1605" height="266" key="GridCell.Tab.0.right" timestamp="1590178083594">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590170956470" />
-    <state x="588" y="279" key="Vcs.Push.Dialog.v2" timestamp="1589998725578">
+    <state width="1605" height="266" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
+    <state x="588" y="279" key="Vcs.Push.Dialog.v2" timestamp="1590176941451">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="588" y="279" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589998725578" />
+    <state x="588" y="279" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590176941451" />
     <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1589743111194">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

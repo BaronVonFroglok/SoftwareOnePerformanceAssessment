@@ -29,7 +29,7 @@
                             </columns>
                         </TableView>
                         <Button fx:id="addPartButton" layoutX="75.0" layoutY="435.0" mnemonicParsing="false" text="Add" onMouseClicked="#AddPartClicked" />
-                        <Button fx:id="modifyPartButton" layoutX="151.0" layoutY="435.0" mnemonicParsing="false" text="Modify" />
+                        <Button fx:id="modifyPartButton" layoutX="151.0" layoutY="435.0" mnemonicParsing="false" text="Modify" onMouseClicked="#ModifyPartClicked"/>
                         <Button fx:id="deletePartButton" layoutX="230.0" layoutY="435.0" mnemonicParsing="false" text="Delete" />
                     </children>
                 </AnchorPane>

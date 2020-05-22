@@ -30,12 +30,19 @@ public class AddModifyPartMainController implements Initializable {
 
     Inventory inventory;
     String addOrMod;
+    Part part;
 
 
 
     public AddModifyPartMainController(Inventory inventory, String addOrMod) {
         this.inventory = inventory;
         this.addOrMod = addOrMod;
+    }
+
+    public AddModifyPartMainController(Inventory inventory, String addOrMod, Part part) {
+        this.inventory = inventory;
+        this.addOrMod = addOrMod;
+        this.part = part;
     }
 
     @Override
@@ -52,7 +59,26 @@ public class AddModifyPartMainController implements Initializable {
 
         }
         else if (addOrMod.equalsIgnoreCase("mod")){
-
+            if (part instanceof InHouse){
+                try{
+                    inHousePane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyInHousePart.fxml"));
+                    InHouse modPart = (InHouse) part;
+                    AddModifyInHousePartController controller = new AddModifyInHousePartController(modPart,"mod", inventory);
+                    switchAnchorPane.getChildren().add(inHousePane);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if (part instanceof Outsourced){
+                try{
+                    outsourcedPane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyOutsourcedPart.fxml"));
+                    Outsourced modPart = (Outsourced) part;
+                    AddModifyOutsourcedPartController controller = new AddModifyOutsourcedPartController(modPart,"mod", inventory);
+                    switchAnchorPane.getChildren().add(outsourcedPane);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
     public void inHouseRadioButtonClicked(MouseEvent mouseEvent){
