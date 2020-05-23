@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="add part button and page load successful. TODO add part finish and modify part implimentation">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="modify part window load successful TODO AddModifyProduct page load">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyInHousePartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyInHousePartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyPartMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View_Controller/AddModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/AddModifyProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View_Controller/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/MainScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View_Controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View_Controller/MainScreenController.java" afterDir="false" />
     </list>
@@ -234,11 +236,29 @@
       <option name="project" value="LOCAL" />
       <updated>1590176939149</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modify part window load successful TODO AddModifyProduct page load">
+      <created>1590178196716</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590178196716</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -247,48 +267,49 @@
     <MESSAGE value="fx:ids finished TODO controllers and main" />
     <MESSAGE value="MainScreen loaded, no data shown, but data is there TODO finish controllers loading all pages correctly" />
     <MESSAGE value="add part button and page load successful. TODO add part finish and modify part implimentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add part button and page load successful. TODO add part finish and modify part implimentation" />
+    <MESSAGE value="modify part window load successful TODO AddModifyProduct page load" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify part window load successful TODO AddModifyProduct page load" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1590177148873">
+    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1590210214455">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1590177148873" />
+    <state x="496" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1590210214455" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589761292896">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589761292896" />
-    <state x="664" y="140" key="CommitChangelistDialog2" timestamp="1590177017471">
+    <state x="664" y="140" key="CommitChangelistDialog2" timestamp="1590178195376">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="664" y="140" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590177017471" />
+    <state x="664" y="140" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590178195376" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1582998999094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1582998999094" />
-    <state width="1605" height="266" key="GridCell.Tab.0.bottom" timestamp="1590178083594">
+    <state width="1605" height="266" key="GridCell.Tab.0.bottom" timestamp="1590213633010">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
-    <state width="1605" height="266" key="GridCell.Tab.0.center" timestamp="1590178083594">
+    <state width="1605" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590213633010" />
+    <state width="1605" height="266" key="GridCell.Tab.0.center" timestamp="1590213633010">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
-    <state width="1605" height="266" key="GridCell.Tab.0.left" timestamp="1590178083594">
+    <state width="1605" height="266" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590213633010" />
+    <state width="1605" height="266" key="GridCell.Tab.0.left" timestamp="1590213633010">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
-    <state width="1605" height="266" key="GridCell.Tab.0.right" timestamp="1590178083594">
+    <state width="1605" height="266" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590213633010" />
+    <state width="1605" height="266" key="GridCell.Tab.0.right" timestamp="1590213633010">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1605" height="266" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590178083594" />
-    <state x="588" y="279" key="Vcs.Push.Dialog.v2" timestamp="1590176941451">
+    <state width="1605" height="266" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590213633010" />
+    <state x="588" y="279" key="Vcs.Push.Dialog.v2" timestamp="1590178203385">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="588" y="279" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590176941451" />
-    <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1589743111194">
+    <state x="588" y="279" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590178203385" />
+    <state x="661" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1590210102570">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="661" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589743111194" />
+    <state x="661" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1590210102570" />
   </component>
 </project>

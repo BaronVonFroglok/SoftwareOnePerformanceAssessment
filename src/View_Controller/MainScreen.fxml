@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="530.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
         <SplitPane dividerPositions="0.5" layoutX="-3.0" layoutY="23.0" prefHeight="400.0" prefWidth="608.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -22,10 +23,26 @@
                         <TextField fx:id="searchPartsTextField" layoutX="236.0" layoutY="179.0" />
                         <TableView fx:id="partsTableView" layoutX="8.0" layoutY="229.0" prefHeight="190.0" prefWidth="379.0">
                             <columns>
-                                <TableColumn fx:id="partIdColumn" prefWidth="75.0" text="Part ID" />
-                                <TableColumn fx:id="partNameColumn" prefWidth="75.0" text="Part Name" />
-                                <TableColumn fx:id="partStockColumn" prefWidth="103.0" text="Inventory Level" />
-                                <TableColumn fx:id="partCostColumn" prefWidth="125.0" text="Price/Cost per Unit" />
+                                <TableColumn fx:id="partIdColumn" prefWidth="75.0" text="Part ID" >
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="partNameColumn" prefWidth="75.0" text="Part Name" >
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="name"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="partStockColumn" prefWidth="103.0" text="Inventory Level" >
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="stock"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="partCostColumn" prefWidth="125.0" text="Price/Cost per Unit" >
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="price"/>
+                                    </cellValueFactory>
+                                </TableColumn>
                             </columns>
                         </TableView>
                         <Button fx:id="addPartButton" layoutX="75.0" layoutY="435.0" mnemonicParsing="false" text="Add" onMouseClicked="#AddPartClicked" />

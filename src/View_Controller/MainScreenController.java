@@ -44,7 +44,8 @@ public class MainScreenController implements Initializable {
     public void ModifyPartClicked(MouseEvent mouseEvent){
         if(partsTableView.getSelectionModel().getSelectedItem()!= null) {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyPartMain.fxml"));
-            AddModifyPartMainController partMainController = new AddModifyPartMainController(inventory, "mod",(Part)partsTableView.getSelectionModel().getSelectedItem());
+            Part modPart = (Part)partsTableView.getSelectionModel().getSelectedItem();
+            AddModifyPartMainController partMainController = new AddModifyPartMainController(inventory, "mod",modPart);
             try {
                 fxLoader.setController(partMainController);
                 Parent root = fxLoader.load();

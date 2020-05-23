@@ -60,6 +60,7 @@ public class AddModifyPartMainController implements Initializable {
         }
         else if (addOrMod.equalsIgnoreCase("mod")){
             if (part instanceof InHouse){
+                outsourcedRadioButton.setDisable(true);
                 try{
                     inHousePane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyInHousePart.fxml"));
                     InHouse modPart = (InHouse) part;
@@ -70,6 +71,9 @@ public class AddModifyPartMainController implements Initializable {
                 }
             }
             else if (part instanceof Outsourced){
+                inHouseRadioButton.setDisable(true);
+                inHouseRadioButton.setSelected(false);
+                outsourcedRadioButton.setSelected(true);
                 try{
                     outsourcedPane = FXMLLoader.load(getClass().getResource("/View_Controller/AddModifyOutsourcedPart.fxml"));
                     Outsourced modPart = (Outsourced) part;

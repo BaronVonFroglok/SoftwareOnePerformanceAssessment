@@ -40,7 +40,9 @@ public class AddModifyInHousePartController implements Initializable {
 
         }
         else if (addOrMod.equalsIgnoreCase("mod")){
+            partIdTextField.clear();
             partIdTextField.setText(Integer.toString(part.getId()));
+            partNameTextField.clear();
             partNameTextField.setText(part.getName());
             stockTextField.setText(Integer.toString(part.getStock()));
             partCostTextField.setText(Double.toString(part.getPrice()));
