@@ -35,8 +35,10 @@ public class InventoryApplication extends Application {
         inv.addPart(part2);
         inv.addPart(part3);
         Product product1 = new Product(1,"product 1",19.73,10,2,10);
+        System.out.println("Product created name " + product1.getName());
         product1.addAssociatedPart(inv.getAllParts().get(0));
         product1.addAssociatedPart(inv.getAllParts().get(1));
         product1.addAssociatedPart(inv.getAllParts().get(2));
+        inv.addProduct(product1);
     }
 }

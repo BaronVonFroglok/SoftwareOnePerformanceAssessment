@@ -71,31 +71,29 @@ public class Inventory {
         return returnList;
     }
 
-    public void updatePart(int index, Part selectedPart){
-        for (int x = 0; x >= allParts.size(); x++){
-            if (allParts.get(x).getId() == index){
-                allParts.set(x,selectedPart);
+    public void updatePart(Part selectedPart){
+        for (int x = 0; x < allParts.size(); x++ ) {
+            if (allParts.get(x).getId() == selectedPart.getId()) {
+                allParts.set(x, selectedPart);
             }
         }
     }
 
     public void updateProduct(int index, Product selectedProduct){
-        for (int x = 0; x >= allProducts.size(); x++){
-            if(allProducts.get(x).getId() == index){
-                allProducts.set(x,selectedProduct);
-            }
-        }
+
+                allProducts.set(index,selectedProduct);
+
     }
 
     public void deletePart(Part selectedPart){
-        for (int x = 0; x >= allParts.size(); x++){
+        for (int x = 0; x < allParts.size(); x++){
             if (allParts.get(x).getId() == selectedPart.getId()){
                 allParts.remove(selectedPart);
             }
         }
     }
     public void deleteProduct(Product selectedProduct){
-        for (int x = 0; x >= allProducts.size(); x++){
+        for (int x = 0; x < allProducts.size(); x++){
             if(allProducts.get(x).getId() == selectedProduct.getId()){
                 allProducts.remove(selectedProduct);
             }

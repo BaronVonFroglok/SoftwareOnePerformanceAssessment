@@ -31,7 +31,9 @@ public class MainScreenController implements Initializable {
     private TableView partsTableView;
     @FXML
     private TableView productsTableView;
+
     private ObservableList<Part> partTableList = FXCollections.observableArrayList();
+    private ObservableList<Product> productTableList = FXCollections.observableArrayList();
 
 
     public MainScreenController(Inventory inventory) {
@@ -39,6 +41,24 @@ public class MainScreenController implements Initializable {
     }
 
     public void AddProductClicked(MouseEvent mouseEvent) {
+    }
+    public void ModifyProductClicked(MouseEvent mouseEvent){
+
+    }
+    public void DeleteProductClicked(MouseEvent mouseEvent){
+        if(productsTableView.getSelectionModel().getSelectedItem() != null){
+            inventory.deleteProduct((Product)productsTableView.getSelectionModel().getSelectedItem());
+            productTableList.remove(productsTableView.getSelectionModel().getSelectedItem());
+            productsTableView.refresh();
+        }
+    }
+    public void DeletePartClicked(MouseEvent mouseEvent){
+
+        if(partsTableView.getSelectionModel().getSelectedItem()!= null){
+            inventory.deletePart((Part)partsTableView.getSelectionModel().getSelectedItem());
+            partTableList.remove(partsTableView.getSelectionModel().getSelectedItem());
+            partsTableView.refresh();
+        }
     }
 
     public void ModifyPartClicked(MouseEvent mouseEvent){
@@ -81,5 +101,8 @@ public class MainScreenController implements Initializable {
         partTableList.setAll(inventory.getAllParts());
         partsTableView.setItems(partTableList);
         partsTableView.refresh();
+        productTableList.setAll(inventory.getAllProducts());
+        productsTableView.setItems(productTableList);
+        productsTableView.refresh();
     }
 }

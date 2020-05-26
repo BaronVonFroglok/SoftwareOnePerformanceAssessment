@@ -47,7 +47,7 @@
                         </TableView>
                         <Button fx:id="addPartButton" layoutX="75.0" layoutY="435.0" mnemonicParsing="false" text="Add" onMouseClicked="#AddPartClicked" />
                         <Button fx:id="modifyPartButton" layoutX="151.0" layoutY="435.0" mnemonicParsing="false" text="Modify" onMouseClicked="#ModifyPartClicked"/>
-                        <Button fx:id="deletePartButton" layoutX="230.0" layoutY="435.0" mnemonicParsing="false" text="Delete" />
+                        <Button fx:id="deletePartButton" layoutX="230.0" layoutY="435.0" mnemonicParsing="false" text="Delete" onMouseClicked="#DeletePartClicked" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -57,15 +57,31 @@
                         <TextField fx:id="searchProductsTextField" layoutX="235.0" layoutY="182.0" />
                         <TableView fx:id="productsTableView" layoutX="7.0" layoutY="228.0" prefHeight="190.0" prefWidth="385.0">
                             <columns>
-                                <TableColumn fx:id="productsIdColumn" prefWidth="75.0" text="Product ID" />
-                                <TableColumn fx:id="productsNameColumn" prefWidth="90.0" text="Product Name" />
-                                <TableColumn fx:id="productsStockColumn" prefWidth="98.0" text="Inventory Level" />
-                                <TableColumn fx:id="productsCostColumn" prefWidth="121.0" text="Price per Unit" />
+                                <TableColumn fx:id="productsIdColumn" prefWidth="75.0" text="Product ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="productsNameColumn" prefWidth="90.0" text="Product Name">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="name"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="productsStockColumn" prefWidth="98.0" text="Inventory Level">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="stock"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="productsCostColumn" prefWidth="121.0" text="Price per Unit">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="price"/>
+                                    </cellValueFactory>
+                                </TableColumn>
                             </columns>
                         </TableView>
                         <Button fx:id="addProductsButton" layoutX="105.0" layoutY="434.0" mnemonicParsing="false" onMouseClicked="#AddProductClicked" text="Add" />
-                        <Button fx:id="modifyProductsButton" layoutX="179.0" layoutY="434.0" mnemonicParsing="false" text="Modify" />
-                        <Button fx:id="deleteProductsButton" layoutX="260.0" layoutY="434.0" mnemonicParsing="false" text="Delete" />
+                        <Button fx:id="modifyProductsButton" layoutX="179.0" layoutY="434.0" mnemonicParsing="false" text="Modify" onMouseClicked="#ModifyProductClicked" />
+                        <Button fx:id="deleteProductsButton" layoutX="260.0" layoutY="434.0" mnemonicParsing="false" text="Delete" onMouseClicked="#DeleteProductClicked" />
                     </children>
                 </AnchorPane>
             </items>
