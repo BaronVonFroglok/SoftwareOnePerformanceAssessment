@@ -41,8 +41,37 @@ public class MainScreenController implements Initializable {
     }
 
     public void AddProductClicked(MouseEvent mouseEvent) {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyProduct.fxml"));
+        AddModifyProductController controller = new AddModifyProductController(inventory,"add");
+        fxLoader.setController(controller);
+        try {
+            Parent root = fxLoader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void ModifyProductClicked(MouseEvent mouseEvent){
+        if (productsTableView.getSelectionModel().getSelectedItem() != null) {
+            Product product = (Product) productsTableView.getSelectionModel().getSelectedItem();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyProduct.fxml"));
+            AddModifyProductController controller = new AddModifyProductController(inventory, "mod", product);
+            fxLoader.setController(controller);
+            try {
+                Parent root = fxLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
     public void DeleteProductClicked(MouseEvent mouseEvent){
