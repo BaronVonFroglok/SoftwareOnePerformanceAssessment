@@ -93,7 +93,7 @@ public class MainScreenController implements Initializable {
 
     public void productSearchClicked(MouseEvent mouseEvent){
         productTableList.setAll(inventory.lookupProduct(searchProductsTextField.getText().trim()));
-        partsTableView.setItems(productTableList);
+        productsTableView.setItems(productTableList);
         productsTableView.refresh();
     }
 
