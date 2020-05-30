@@ -45,16 +45,9 @@ public class MainScreenController implements Initializable {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyProduct.fxml"));
         AddModifyProductController controller = new AddModifyProductController(inventory,"add",product);
         fxLoader.setController(controller);
-        try {
-            Parent root = fxLoader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        loadPage(fxLoader,mouseEvent);
+
     }
     public void ModifyProductClicked(MouseEvent mouseEvent){
         if (productsTableView.getSelectionModel().getSelectedItem() != null) {
@@ -62,16 +55,8 @@ public class MainScreenController implements Initializable {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyProduct.fxml"));
             AddModifyProductController controller = new AddModifyProductController(inventory, "mod", product);
             fxLoader.setController(controller);
-            try {
-                Parent root = fxLoader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
+            loadPage(fxLoader,mouseEvent);
         }
 
     }
@@ -102,17 +87,9 @@ public class MainScreenController implements Initializable {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyPartMain.fxml"));
             Part modPart = (Part)partsTableView.getSelectionModel().getSelectedItem();
             AddModifyPartMainController partMainController = new AddModifyPartMainController(inventory, "mod",modPart);
-            try {
-                fxLoader.setController(partMainController);
-                Parent root = fxLoader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            fxLoader.setController(partMainController);
+
+            loadPage(fxLoader,mouseEvent);
         }
     }
 
@@ -125,17 +102,9 @@ public class MainScreenController implements Initializable {
     public void AddPartClicked(MouseEvent mouseEvent) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyPartMain.fxml"));
         AddModifyPartMainController partMainController = new AddModifyPartMainController(inventory,"add");
-        try {
-            fxLoader.setController(partMainController);
-            Parent root = fxLoader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        fxLoader.setController(partMainController);
+
+        loadPage(fxLoader,mouseEvent);
     }
 
     @Override
@@ -146,5 +115,19 @@ public class MainScreenController implements Initializable {
         productTableList.setAll(inventory.getAllProducts());
         productsTableView.setItems(productTableList);
         productsTableView.refresh();
+    }
+
+    public void loadPage(FXMLLoader loader, MouseEvent mouseEvent){
+
+        try {
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

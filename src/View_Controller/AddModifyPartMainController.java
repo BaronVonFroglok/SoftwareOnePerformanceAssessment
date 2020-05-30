@@ -119,21 +119,11 @@ public class AddModifyPartMainController implements Initializable {
     }
 
     public void cancelButtonCLicked(MouseEvent mouseEvent){
-        try {
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-            MainScreenController mcs = new MainScreenController(inventory);
-            fxLoader.setController(mcs);
-            Parent root = fxLoader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+        MainScreenController mcs = new MainScreenController(inventory);
+        fxLoader.setController(mcs);
 
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadPage(fxLoader,mouseEvent);
     }
 
     public void addButtonClicked(MouseEvent mouseEvent) {
@@ -147,6 +137,7 @@ public class AddModifyPartMainController implements Initializable {
                 partToAdd.setMax(Integer.parseInt((partMaxTextField.getText().trim())));
                 partToAdd.setMin(Integer.parseInt(partMinTextField.getText().trim()));
                 partToAdd.setMachineId(Integer.parseInt(partCompanyTextField.getText().trim()));
+
                 inventory.addPart(partToAdd);
             }
             else if(addOrMod.equalsIgnoreCase("mod")){
@@ -165,26 +156,11 @@ public class AddModifyPartMainController implements Initializable {
 
                 }
 
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+            MainScreenController mcs = new MainScreenController(inventory);
+            fxLoader.setController(mcs);
 
-
-
-
-            try {
-
-                FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-                MainScreenController mcs = new MainScreenController(inventory);
-                fxLoader.setController(mcs);
-                Parent root = fxLoader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.show();
-
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
+            loadPage(fxLoader,mouseEvent);
         }
         else if (outsourcedRadioButton.isSelected()){
             if (addOrMod.equalsIgnoreCase("add")) {
@@ -214,23 +190,25 @@ public class AddModifyPartMainController implements Initializable {
 
 
             }
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+            MainScreenController mcs = new MainScreenController(inventory);
+            fxLoader.setController(mcs);
 
-            try {
+            loadPage(fxLoader,mouseEvent);
+        }
+    }
 
-                FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-                MainScreenController mcs = new MainScreenController(inventory);
-                fxLoader.setController(mcs);
-                Parent root = fxLoader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.show();
+    public void loadPage(FXMLLoader loader, MouseEvent mouseEvent){
 
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

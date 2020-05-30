@@ -110,22 +110,11 @@ public class AddModifyProductController implements Initializable {
     }
 
     public void cancelButtonCLicked(MouseEvent mouseEvent){
-        try {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+        MainScreenController mcs = new MainScreenController(inventory);
+        fxLoader.setController(mcs);
 
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-            MainScreenController mcs = new MainScreenController(inventory);
-            fxLoader.setController(mcs);
-            Parent root = fxLoader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadPage(fxLoader,mouseEvent);
     }
 
     public void productSaveButtonClicked(MouseEvent mouseEvent){
@@ -150,20 +139,24 @@ public class AddModifyProductController implements Initializable {
 
             inventory.addProduct(product);
         }
-        try {
 
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-            MainScreenController mcs = new MainScreenController(inventory);
-            fxLoader.setController(mcs);
-            Parent root = fxLoader.load();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+        MainScreenController mcs = new MainScreenController(inventory);
+        fxLoader.setController(mcs);
+
+        loadPage(fxLoader,mouseEvent);
+    }
+
+    public void loadPage(FXMLLoader loader, MouseEvent mouseEvent){
+
+        try {
+            Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
-
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
