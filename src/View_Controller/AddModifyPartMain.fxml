@@ -23,7 +23,7 @@
             </AnchorPane>
           <AnchorPane fx:id="switchAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" >
               <Button layoutX="110.0" layoutY="343.0" mnemonicParsing="false" text="Add" onMouseClicked="#addButtonClicked" />
-              <Button layoutX="216.0" layoutY="343.0" mnemonicParsing="false" text="Cancel" />
+              <Button layoutX="216.0" layoutY="343.0" mnemonicParsing="false" text="Cancel" onMouseClicked="#cancelButtonCLicked" />
               <Label layoutX="36.0" layoutY="46.0" text="Part ID" />
               <Label layoutX="36.0" layoutY="89.0" text="Name" />
               <Label layoutX="36.0" layoutY="129.0" text="Inv" />

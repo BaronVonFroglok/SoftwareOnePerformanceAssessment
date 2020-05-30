@@ -41,8 +41,9 @@ public class MainScreenController implements Initializable {
     }
 
     public void AddProductClicked(MouseEvent mouseEvent) {
+        Product product = new Product();
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyProduct.fxml"));
-        AddModifyProductController controller = new AddModifyProductController(inventory,"add");
+        AddModifyProductController controller = new AddModifyProductController(inventory,"add",product);
         fxLoader.setController(controller);
         try {
             Parent root = fxLoader.load();
@@ -90,6 +91,12 @@ public class MainScreenController implements Initializable {
         }
     }
 
+    public void productSearchClicked(MouseEvent mouseEvent){
+        productTableList.setAll(inventory.lookupProduct(searchProductsTextField.getText().trim()));
+        partsTableView.setItems(productTableList);
+        productsTableView.refresh();
+    }
+
     public void ModifyPartClicked(MouseEvent mouseEvent){
         if(partsTableView.getSelectionModel().getSelectedItem()!= null) {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/AddModifyPartMain.fxml"));
@@ -107,6 +114,12 @@ public class MainScreenController implements Initializable {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void partSearchClicked(MouseEvent mouseEvent){
+        partTableList.setAll(inventory.lookupPart(searchPartsTextField.getText().trim()));
+        partsTableView.setItems(partTableList);
+        partsTableView.refresh();
     }
 
     public void AddPartClicked(MouseEvent mouseEvent) {

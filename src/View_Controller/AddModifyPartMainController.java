@@ -118,6 +118,24 @@ public class AddModifyPartMainController implements Initializable {
         partCompanyTextField.setPromptText("Company Name");
     }
 
+    public void cancelButtonCLicked(MouseEvent mouseEvent){
+        try {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+            MainScreenController mcs = new MainScreenController(inventory);
+            fxLoader.setController(mcs);
+            Parent root = fxLoader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void addButtonClicked(MouseEvent mouseEvent) {
         if(inHouseRadioButton.isSelected()) {
             if(addOrMod.equalsIgnoreCase("add")) {

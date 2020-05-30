@@ -19,7 +19,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="302.0">
                     <children>
                         <Label layoutX="43.0" layoutY="104.0" text="Parts" />
-                        <Button fx:id="searchPartsButton" layoutX="150.0" layoutY="179.0" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="searchPartsButton" layoutX="150.0" layoutY="179.0" mnemonicParsing="false" text="Search" onMouseClicked="#partSearchClicked" />
                         <TextField fx:id="searchPartsTextField" layoutX="236.0" layoutY="179.0" />
                         <TableView fx:id="partsTableView" layoutX="8.0" layoutY="229.0" prefHeight="190.0" prefWidth="379.0">
                             <columns>
@@ -53,7 +53,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                     <children>
                         <Label layoutX="79.0" layoutY="115.0" text="Products" />
-                        <Button fx:id="searchProductsButton" layoutX="171.0" layoutY="178.0" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="searchProductsButton" layoutX="171.0" layoutY="178.0" mnemonicParsing="false" text="Search" onMouseClicked="#productSearchClicked" />
                         <TextField fx:id="searchProductsTextField" layoutX="235.0" layoutY="182.0" />
                         <TableView fx:id="productsTableView" layoutX="7.0" layoutY="228.0" prefHeight="190.0" prefWidth="385.0">
                             <columns>

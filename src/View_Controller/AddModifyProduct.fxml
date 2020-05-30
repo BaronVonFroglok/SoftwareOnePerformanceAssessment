@@ -11,7 +11,7 @@
 <AnchorPane prefHeight="706.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Label fx:id="AddModifyLabel" layoutX="108.0" layoutY="103.0" />
-      <Button fx:id="partSearchButton" layoutX="591.0" layoutY="120.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="partSearchButton" layoutX="591.0" layoutY="120.0" mnemonicParsing="false" text="Search" onMouseClicked="#partSearchClicked"/>
       <TextField fx:id="partSearchTextField" layoutX="697.0" layoutY="120.0" />
       <TableView fx:id="partAddTableView" layoutX="417.0" layoutY="194.0" prefHeight="123.0" prefWidth="496.0">
         <columns>
@@ -61,10 +61,10 @@
             </TableColumn>
         </columns>
       </TableView>
-      <Button fx:id="productPartAddButton" layoutX="820.0" layoutY="353.0" mnemonicParsing="false" text="Add" />
-      <Button fx:id="productPartDeleteButton" layoutX="820.0" layoutY="586.0" mnemonicParsing="false" text="Delete" />
-      <Button fx:id="productSaveButton" layoutX="759.0" layoutY="632.0" mnemonicParsing="false" text="Save" />
-      <Button fx:id="CancelButton" layoutX="861.0" layoutY="632.0" mnemonicParsing="false" text="Cancel" />
+      <Button fx:id="productPartAddButton" layoutX="820.0" layoutY="353.0" mnemonicParsing="false" text="Add" onMouseClicked="#productPartAddButtonClicked" />
+      <Button fx:id="productPartDeleteButton" layoutX="820.0" layoutY="586.0" mnemonicParsing="false" text="Delete" onMouseClicked="#productPartDeleteButtonClicked"/>
+      <Button fx:id="productSaveButton" layoutX="759.0" layoutY="632.0" mnemonicParsing="false" text="Save" onMouseClicked="#productSaveButtonClicked"/>
+      <Button fx:id="CancelButton" layoutX="861.0" layoutY="632.0" mnemonicParsing="false" text="Cancel" onMouseClicked="#cancelButtonCLicked" />
       <Label layoutX="37.0" layoutY="247.0" text="Id" />
       <Label layoutX="37.0" layoutY="293.0" text="Name" />
       <Label layoutX="37.0" layoutY="336.0" text="Inv" />

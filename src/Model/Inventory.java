@@ -74,14 +74,20 @@ public class Inventory {
     public void updatePart(Part selectedPart){
         for (int x = 0; x < allParts.size(); x++ ) {
             if (allParts.get(x).getId() == selectedPart.getId()) {
-                allParts.set(x, selectedPart);
+                allParts.remove(x);
+                allParts.add(selectedPart);
             }
         }
     }
 
-    public void updateProduct(int index, Product selectedProduct){
+    public void updateProduct(Product selectedProduct){
 
-                allProducts.set(index,selectedProduct);
+        for (int x = 0; x < allProducts.size(); x++ ) {
+            if (allProducts.get(x).getId() == selectedProduct.getId()) {
+                allProducts.remove(x);
+                allProducts.add(selectedProduct);
+            }
+        }
 
     }
 
