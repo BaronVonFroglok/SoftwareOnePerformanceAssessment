@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -62,17 +65,31 @@ public class MainScreenController implements Initializable {
     }
     public void DeleteProductClicked(MouseEvent mouseEvent){
         if(productsTableView.getSelectionModel().getSelectedItem() != null){
-            inventory.deleteProduct((Product)productsTableView.getSelectionModel().getSelectedItem());
-            productTableList.remove(productsTableView.getSelectionModel().getSelectedItem());
-            productsTableView.refresh();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete");
+            alert.setHeaderText("Are you sure?");
+            alert.setContentText("Click OK.");
+            Optional<ButtonType> confirm = alert.showAndWait();
+            if(confirm.get() == ButtonType.OK) {
+                inventory.deleteProduct((Product) productsTableView.getSelectionModel().getSelectedItem());
+                productTableList.remove(productsTableView.getSelectionModel().getSelectedItem());
+                productsTableView.refresh();
+            }
         }
     }
     public void DeletePartClicked(MouseEvent mouseEvent){
 
         if(partsTableView.getSelectionModel().getSelectedItem()!= null){
-            inventory.deletePart((Part)partsTableView.getSelectionModel().getSelectedItem());
-            partTableList.remove(partsTableView.getSelectionModel().getSelectedItem());
-            partsTableView.refresh();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete");
+            alert.setHeaderText("Are you sure?");
+            alert.setContentText("Click OK.");
+            Optional<ButtonType> confirm = alert.showAndWait();
+            if(confirm.get() == ButtonType.OK) {
+                inventory.deletePart((Part) partsTableView.getSelectionModel().getSelectedItem());
+                partTableList.remove(partsTableView.getSelectionModel().getSelectedItem());
+                partsTableView.refresh();
+            }
         }
     }
 

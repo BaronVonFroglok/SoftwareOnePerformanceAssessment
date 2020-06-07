@@ -10,15 +10,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AddModifyPartMainController implements Initializable {
@@ -27,12 +26,6 @@ public class AddModifyPartMainController implements Initializable {
     RadioButton outsourcedRadioButton;
     @FXML
     RadioButton inHouseRadioButton;
-    @FXML
-    AnchorPane switchAnchorPane;
-    @FXML
-    AnchorPane inHousePane;
-    @FXML
-    AnchorPane outsourcedPane;
     @FXML
     TextField partIdTextField;
     @FXML
@@ -77,7 +70,7 @@ public class AddModifyPartMainController implements Initializable {
         else if (addOrMod.equalsIgnoreCase("mod")){
             if (part instanceof InHouse){
 
-                outsourcedRadioButton.setDisable(true);
+                //outsourcedRadioButton.setDisable(true);
                 companyLabel.setText("Machine ID");
                 partCompanyTextField.setPromptText("Machine ID");
 
@@ -92,7 +85,7 @@ public class AddModifyPartMainController implements Initializable {
             }
             else if (part instanceof Outsourced){
 
-                inHouseRadioButton.setDisable(true);
+                //inHouseRadioButton.setDisable(true);
                 inHouseRadioButton.setSelected(false);
                 outsourcedRadioButton.setSelected(true);
 
@@ -119,82 +112,98 @@ public class AddModifyPartMainController implements Initializable {
     }
 
     public void cancelButtonCLicked(MouseEvent mouseEvent){
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-        MainScreenController mcs = new MainScreenController(inventory);
-        fxLoader.setController(mcs);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cancel");
+        alert.setHeaderText("Are you sure?");
+        alert.setContentText("Click OK.");
+        Optional<ButtonType> confirm = alert.showAndWait();
+        if(confirm.get() == ButtonType.OK) {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+            MainScreenController mcs = new MainScreenController(inventory);
+            fxLoader.setController(mcs);
 
-        loadPage(fxLoader,mouseEvent);
+            loadPage(fxLoader, mouseEvent);
+        }
     }
 
     public void addButtonClicked(MouseEvent mouseEvent) {
-        if(inHouseRadioButton.isSelected()) {
-            if(addOrMod.equalsIgnoreCase("add")) {
-                InHouse partToAdd = new InHouse();
-                partToAdd.setId(Integer.parseInt(partIdTextField.getText().trim()));
-                partToAdd.setName(partNameTextField.getText().trim());
-                partToAdd.setStock(Integer.parseInt(partStockTextField.getText().trim()));
-                partToAdd.setPrice(Double.parseDouble(partCostTextField.getText().trim()));
-                partToAdd.setMax(Integer.parseInt((partMaxTextField.getText().trim())));
-                partToAdd.setMin(Integer.parseInt(partMinTextField.getText().trim()));
-                partToAdd.setMachineId(Integer.parseInt(partCompanyTextField.getText().trim()));
+        try{
+            if(inHouseRadioButton.isSelected()) {
+                if (addOrMod.equalsIgnoreCase("add")) {
+                    InHouse partToAdd = new InHouse();
+                    partToAdd.setId(Integer.parseInt(partIdTextField.getText().trim()));
+                    partToAdd.setName(partNameTextField.getText().trim());
+                    partToAdd.setStock(Integer.parseInt(partStockTextField.getText().trim()));
+                    partToAdd.setPrice(Double.parseDouble(partCostTextField.getText().trim()));
+                    partToAdd.setMax(Integer.parseInt((partMaxTextField.getText().trim())));
+                    partToAdd.setMin(Integer.parseInt(partMinTextField.getText().trim()));
+                    partToAdd.setMachineId(Integer.parseInt(partCompanyTextField.getText().trim()));
 
-                inventory.addPart(partToAdd);
-            }
-            else if(addOrMod.equalsIgnoreCase("mod")){
-                InHouse modPart = new InHouse();
-                modPart.setId(Integer.parseInt(partIdTextField.getText().trim()));
-                modPart.setName(partNameTextField.getText().trim());
-                modPart.setStock(Integer.parseInt(partStockTextField.getText().trim()));
-                modPart.setPrice(Double.parseDouble(partCostTextField.getText().trim()));
-                modPart.setMax(Integer.parseInt(partMaxTextField.getText().trim()));
-                modPart.setMin(Integer.parseInt(partMinTextField.getText().trim()));
-                modPart.setMachineId(Integer.parseInt(partCompanyTextField.getText().trim()));
+                    inventory.addPart(partToAdd);
+                } else if (addOrMod.equalsIgnoreCase("mod")) {
+                    InHouse modPart = new InHouse();
+                    modPart.setId(Integer.parseInt(partIdTextField.getText().trim()));
+                    modPart.setName(partNameTextField.getText().trim());
+                    modPart.setStock(Integer.parseInt(partStockTextField.getText().trim()));
+                    modPart.setPrice(Double.parseDouble(partCostTextField.getText().trim()));
+                    modPart.setMax(Integer.parseInt(partMaxTextField.getText().trim()));
+                    modPart.setMin(Integer.parseInt(partMinTextField.getText().trim()));
+                    modPart.setMachineId(Integer.parseInt(partCompanyTextField.getText().trim()));
 
 
-                inventory.updatePart(modPart);
+                    inventory.updatePart(modPart);
 
 
                 }
 
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-            MainScreenController mcs = new MainScreenController(inventory);
-            fxLoader.setController(mcs);
+                FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+                MainScreenController mcs = new MainScreenController(inventory);
+                fxLoader.setController(mcs);
 
-            loadPage(fxLoader,mouseEvent);
+                loadPage(fxLoader, mouseEvent);
+            }
+
+            else if (outsourcedRadioButton.isSelected()){
+                if (addOrMod.equalsIgnoreCase("add")) {
+                    part = new Outsourced(Integer.parseInt(partIdTextField.getText()), partNameTextField.getText(),
+                            Double.parseDouble(partCostTextField.getText()), Integer.parseInt(partStockTextField.getText()),
+                            Integer.parseInt(partMinTextField.getText()), Integer.parseInt(partMaxTextField.getText()),
+                            partCompanyTextField.getText());
+                    inventory.addPart(part);
+                }
+                else if (addOrMod.equalsIgnoreCase("mod")){
+
+                    Outsourced modPart = new Outsourced();
+                    modPart.setId(Integer.parseInt(partIdTextField.getText().trim()));
+                    System.out.println(modPart.getId());
+                    modPart.setName(partNameTextField.getText().trim());
+                    System.out.println(modPart.getName());
+                    modPart.setPrice(Double.parseDouble(partCostTextField.getText()));
+                    modPart.setStock(Integer.parseInt(partStockTextField.getText().trim()));
+                    modPart.setMax(Integer.parseInt(partMaxTextField.getText().trim()));
+                    modPart.setMin(Integer.parseInt(partMinTextField.getText().trim()));
+                    modPart.setCompanyName(partCompanyTextField.getText().trim());
+                    System.out.println(modPart.getCompanyName());
+
+
+                    inventory.updatePart(modPart);
+
+
+
+                }
+                FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
+                MainScreenController mcs = new MainScreenController(inventory);
+                fxLoader.setController(mcs);
+
+                loadPage(fxLoader,mouseEvent);
+            }
         }
-        else if (outsourcedRadioButton.isSelected()){
-            if (addOrMod.equalsIgnoreCase("add")) {
-                part = new Outsourced(Integer.parseInt(partIdTextField.getText()), partNameTextField.getText(),
-                        Double.parseDouble(partCostTextField.getText()), Integer.parseInt(partStockTextField.getText()),
-                        Integer.parseInt(partMinTextField.getText()), Integer.parseInt(partMaxTextField.getText()),
-                        partCompanyTextField.getText());
-                inventory.addPart(part);
-            }
-            else if (addOrMod.equalsIgnoreCase("mod")){
-
-                Outsourced modPart = new Outsourced();
-                modPart.setId(Integer.parseInt(partIdTextField.getText().trim()));
-                System.out.println(modPart.getId());
-                modPart.setName(partNameTextField.getText().trim());
-                System.out.println(modPart.getName());
-                modPart.setPrice(Double.parseDouble(partCostTextField.getText()));
-                modPart.setStock(Integer.parseInt(partStockTextField.getText().trim()));
-                modPart.setMax(Integer.parseInt(partMaxTextField.getText().trim()));
-                modPart.setMin(Integer.parseInt(partMinTextField.getText().trim()));
-                modPart.setCompanyName(partCompanyTextField.getText().trim());
-                System.out.println(modPart.getCompanyName());
-
-
-                inventory.updatePart(modPart);
-
-
-
-            }
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/View_Controller/MainScreen.fxml"));
-            MainScreenController mcs = new MainScreenController(inventory);
-            fxLoader.setController(mcs);
-
-            loadPage(fxLoader,mouseEvent);
+        catch (NumberFormatException ex){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("NaN");
+            alert.setHeaderText("That's not a number!");
+            alert.setContentText("Try again.");
+            alert.showAndWait();
         }
     }
 
